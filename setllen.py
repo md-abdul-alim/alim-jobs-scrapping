@@ -51,7 +51,7 @@ def paginated_jobs(url):
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
         all_jobs = soup.find_all(class_='jwtpl-hili-col2')
-        extract_jobs(JOBS=all_jobs)
+        extract_jobs(all_jobs)
     else:
         pass
 
@@ -76,7 +76,7 @@ def main():
             all_jobs = soup.find_all(class_='jwtpl-hili-col2')
 
             if len(all_jobs) >= 1:
-                extract_jobs(JOBS=all_jobs)
+                extract_jobs(all_jobs)
 
                 total_jobs = int(soup.find(class_='jwtpl-seco1-contentSpecial').text.strip().split(" ")[0])
                 total_pages = total_jobs // 20
