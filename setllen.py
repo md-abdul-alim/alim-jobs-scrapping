@@ -25,9 +25,9 @@ def save_csv(data):
     save_csv_call_counter += 1
 
 
-def extract_jobs(JOBS):
-    if len(JOBS) >= 1:
-        for job in JOBS:
+def extract_jobs(jobs):
+    if len(jobs) >= 1:
+        for job in jobs:
             job_title = job.find(class_='jwtpl-hili-itemTitel').text.strip()
             job_date = job.find(class_='jwtpl-hili-itemDate').text.strip()
             job_company = job.find(class_='jwtpl-hili-itemCompany').text.strip()
@@ -46,8 +46,8 @@ def extract_jobs(JOBS):
             save_csv(data.values())
 
 
-def paginated_jobs(URL):
-    response = requests.get(URL)
+def paginated_jobs(url):
+    response = requests.get(url)
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
         all_jobs = soup.find_all(class_='jwtpl-hili-col2')
@@ -63,7 +63,7 @@ def get_urls(soup, total_pages):
         new_int_value = f'jssc={page*20}'
         updated_url = base_url + str(new_int_value)
 
-        paginated_jobs(URL=updated_url)
+        paginated_jobs(updated_url)
 
 
 def main():
