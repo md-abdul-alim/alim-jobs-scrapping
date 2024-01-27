@@ -4,6 +4,14 @@ from bs4 import BeautifulSoup
 
 save_csv_call_counter = 0
 file_name = 'setllen_market_de_25_jan.csv'
+keywords = [
+    "Software+developer",
+    "Software+engineer",
+    "data+scientist",
+    "python+developer",
+    "javascript+developer"
+]
+
 
 def save_csv(data):
     global save_csv_call_counter
@@ -16,13 +24,6 @@ def save_csv(data):
         writer.writerow(data)
     save_csv_call_counter += 1
 
-keywords = [
-    "Software+developer",
-    "Software+engineer",
-    "data+scientist",
-    "python+developer",
-    "javascript+developer"
-]
 
 def extract_jobs(JOBS):
     if len(JOBS) >= 1:
@@ -44,6 +45,7 @@ def extract_jobs(JOBS):
             print(data)
             save_csv(data.values())
 
+
 def paginated_jobs(URL):
     response = requests.get(URL)
     if response.status_code == 200:
@@ -53,6 +55,7 @@ def paginated_jobs(URL):
     else:
         pass
 
+
 def get_urls(soup, total_pages):
     for page in range(1, total_pages + 1):
         next_page_url = soup.find('a', class_='jwtpl-hilipage-nextBt jwtpl-hilipage-nextBtActive1').get('href') if soup.find('a', class_='jwtpl-hilipage-nextBt jwtpl-hilipage-nextBtActive1') else print("End of the page. No Job anymore.")
@@ -61,6 +64,7 @@ def get_urls(soup, total_pages):
         updated_url = base_url + str(new_int_value)
 
         paginated_jobs(URL=updated_url)
+
 
 def main():
     for keyword in keywords:
@@ -91,5 +95,6 @@ def main():
     print("-----------------Total Jobs-------------------")
     print("Total jobs: ", save_csv_call_counter)
     print("-----------------Total Jobs-------------------")
+
 
 main()
