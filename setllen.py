@@ -68,8 +68,8 @@ def get_urls(soup, total_pages):
 
 def main():
     for keyword in keywords:
-        URL = f"https://stellenmarkt.sueddeutsche.de/suchergebnis?jsjn={keyword}&jsjnid=&jsjo=&jsjoid=&jsjr=#"
-        response = requests.get(URL)
+        url = f"https://stellenmarkt.sueddeutsche.de/suchergebnis?jsjn={keyword}&jsjnid=&jsjo=&jsjoid=&jsjr=#"
+        response = requests.get(url)
 
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
