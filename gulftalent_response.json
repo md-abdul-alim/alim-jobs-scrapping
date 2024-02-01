@@ -1,0 +1,50 @@
+{
+    "suggestions": null,
+    "config": {
+        "results": "UNFILTERED",
+        "filters": "ENABLED"
+    },
+    "keyword": "Software Engineer",
+    "results": {
+        "filtered_count": 912,
+        "data":[
+            {
+                "position_id": 388118,
+                "title": "Software Engineer",
+                "posted_date_ts": 1705557600,
+                "location_code": 10111112000000,
+                "location_with_remote_code": "10111112000000",
+                "position_slug": "software-engineer",
+                "category_id": 42,
+                "category_name": "IT - Software & Web Development",
+                "company_id": 1708,
+                "company_name": "ManpowerGroup Middle East",
+                "company_confidential": 0,
+                "company_url": "/companies/manpowergroup-middle-east-careers",
+                "seniority_id": 4,
+                "industry_id": 25,
+                "nationality_regions": "0",
+                "nationality_regions_field": "0",
+                "industry_name": "Recruitment & HR",
+                "scraping_type": "solicited",
+                "is_scraped": 1,
+                "has_external_application": 0,
+                "is_lite": 0,
+                "is_exclusive": 0,
+                "is_remote": 0,
+                "is_aggregator": 0,
+                "title_ids": "2478",
+                "location": "Saudi Arabia",
+                "employment_type_id": 1,
+                "city_id": null,
+                "country_id": "10111112000000",
+                "relevance": 0,
+                "id": 388118,
+                "listing_logo_url": "/gtimages/small/HE647-1708_logo-img-manpowergroup-middle-east-careers-jobs.png",
+                "link": "/saudi-arabia/jobs/software-engineer-388118",
+                "gtm_country": "saudi_arabia",
+                "jobs_in_location_url": "/saudi-arabia/jobs"
+            }
+        ]    
+    }
+}
