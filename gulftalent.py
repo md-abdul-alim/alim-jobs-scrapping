@@ -13,8 +13,10 @@ keywords = [
     "javascript+developer"
 ]
 
+
 def convert_timestamp_to_date(timestamp):
     return datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S UTC').split(" ")[0]
+
 
 
 def save_csv(data):
@@ -30,24 +32,24 @@ def save_csv(data):
 
 
 def extract_jobs(jobs):
-        for job in jobs:
-            if job["country_id"] == "10111112000000":
-                job_title = job["title"]
-                job_date = convert_timestamp_to_date(job["posted_date_ts"])
-                job_company = job["company_name"]
-                job_location = job["location"]
+    for job in jobs:
+        if job["country_id"] == "10111112000000":
+            job_title = job["title"]
+            job_date = convert_timestamp_to_date(job["posted_date_ts"])
+            job_company = job["company_name"]
+            job_location = job["location"]
 
-                data = {
-                    "job_title": job_title,
-                    "company": job_company,
-                    "company_website": "",
-                    "location": job_location,
-                    "date": job_date,
-                    "job_desc": ""
-                }
+            data = {
+                "job_title": job_title,
+                "company": job_company,
+                "company_website": "",
+                "location": job_location,
+                "date": job_date,
+                "job_desc": ""
+            }
 
-                print(data)
-                save_csv(data.values())
+            print(data)
+            save_csv(data.values())
 
 
 def main():
