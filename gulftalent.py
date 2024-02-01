@@ -18,7 +18,6 @@ def convert_timestamp_to_date(timestamp):
     return datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S UTC').split(" ")[0]
 
 
-
 def save_csv(data):
     global save_csv_call_counter
 
